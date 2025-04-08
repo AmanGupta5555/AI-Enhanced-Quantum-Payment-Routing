@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FIS Quantum Payment Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --fis-blue: #0033A0;
+            --fis-light-blue: #007DBA;
+            --fis-green: #78BE20;
+            --fis-purple: #5F259F;
+            --fis-gray: #54565A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4eff9 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--fis-gray);
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 51, 160, 0.15);
+            width: 100%;
+            max-width: 650px;
+            padding: 30px;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: var(--fis-blue);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--fis-light-blue);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .results-container {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 51, 160, 0.1);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .result-label {
+            font-weight: 600;
+            width: 150px;
+            color: var(--fis-blue);
+        }
+
+        .result-value {
+            flex: 1;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+            background-color: #ffebee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--fis-blue), var(--fis-light-blue));
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 51, 160, 0.2);
+        }
+
+        .saving-badge {
+            background-color: var(--fis-green);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .network-path {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .node-marker {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: var(--fis-purple);
+            color: white;
+            border-radius: 50%;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+
+        .path-arrow {
+            color: var(--fis-light-blue);
+            margin: 0 5px;
+        }
+
+        .quantum-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(0, 125, 186, 0.8) 0%, rgba(0, 51, 160, 0) 70%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.5;
+            }
+            80% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--fis-gray);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .result-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .result-label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quantum-particles">
+            <div class="particle" style="width: 40px; height: 40px; left: 20%; top: 20%; animation-delay: 0s;"></div>
+            <div class="particle" style="width: 30px; height: 30px; left: 70%; top: 30%; animation-delay: 2s;"></div>
+            <div class="particle" style="width: 20px; height: 20px; left: 40%; top: 60%; animation-delay: 4s;"></div>
+            <div class="particle" style="width: 35px; height: 35px; left: 80%; top: 70%; animation-delay: 1s;"></div>
+            <div class="particle" style="width: 25px; height: 25px; left: 10%; top: 80%; animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="header">
+            <div class="logo">
+                <svg width="100%" height="100%" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20,10 L80,10 L80,40 L20,40 Z" fill="#0033A0"/>
+                    <text x="50" y="30" font-family="Arial" font-size="20" fill="white" text-anchor="middle">FIS</text>
+                </svg>
+            </div>
+            <h1>Quantum Payment Results</h1>
+            <p class="subtitle">Optimization Complete</p>
+        </div>
+        
+        {% if path.startswith('Error') %}
+        <div class="error-message">
+            {{ path }}
+        </div>
+        {% else %}
+        <div class="results-container">
+            <div class="result-item">
+                <div class="result-label">Amount:</div>
+                <div class="result-value">${{ amount|round(2) }}</div>
+            </div>
+            
+            {% if '<br>' in path %}
+            {% set parts = path.split('<br>') %}
+            <div class="result-item">
+                <div class="result-label">Status:</div>
+                <div class="result-value">
+                    <div class="error-message" style="background: none; padding: 0; text-align: left;">
+                        {{ parts[0]|safe }}
+                    </div>
+                    <div class="success-message">
+                        {{ parts[1]|safe }}
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="result-item">
+                <div class="result-label">Optimized Path:</div>
+                <div class="result-value success-message">{{ path }}</div>
+            </div>
+            {% endif %}
+            
+            <div class="result-item">
+                <div class="result-label">Total Cost:</div>
+                <div class="result-value">${{ total_cost|round(2) }}</div>
+            </div>
+        </div>
+        
+        <div class="network-path">
+            <h3>Visualization:</h3>
+            <div class="path-visual">
+                {% if '<br>' in path %}
+                {% set final_path = path.split('<br>')[1].split(': ')[1] %}
+                {% for node in final_path.split(' -> ') %}
+                <span class="node-marker">{{ node }}</span>
+                {% if not loop.last %}
+                <span class="path-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+                {% endif %}
+                {% endfor %}
+                {% else %}
+                {% for node in path.split(' -> ') %}
+                <span class="node-marker">{{ node }}</span>
+                {% if not loop.last %}
+                <span class="path-arrow"><i class="fas fa-long-arrow-alt-right"></i></span>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <a href="/" class="btn">
+            <i class="fas fa-redo"></i> Calculate Another Route
+        </a>
+    </div>
+    
+    <footer>
+        <p>© 2025 FIS Global. All rights reserved.</p>
+    </footer>
+</body>
+</html>
