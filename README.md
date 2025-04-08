@@ -4,9 +4,9 @@
 
 **AI Enhanced Quantum Payment Router**
 
-## 2. Describe Your Solution; What Problem You Are Solving
+## 2. Solution Description
 
-The **FIS Quantum Payment Router** is an innovative solution designed to optimize cross-border payment routing in financial networks. Cross-border payments often face challenges such as high transaction fees, variable forex rates, network latency, and liquidity constraints, leading to inefficiencies and increased costs for financial institutions and their clients. Traditional routing methods may not dynamically account for real-time network conditions or optimize across multiple factors simultaneously.
+The **AI Enhanced Quantum Payment Router** is an innovative solution designed to optimize cross-border payment routing in financial networks. Cross-border payments often face challenges such as high transaction fees, variable forex rates, network latency, and liquidity constraints, leading to inefficiencies and increased costs for financial institutions and their clients. Traditional routing methods may not dynamically account for real-time network conditions or optimize across multiple factors simultaneously.
 
 Our solution addresses these issues by leveraging **artificial intelligence (AI)** and **quantum computing principles** to identify the most cost-effective and efficient payment paths between banks. It considers factors like latency, fees, liquidity, and forex rates, while also adapting to real-time network conditions (e.g., offline nodes or insufficient liquidity). The goal is to minimize transaction costs, reduce delays, and ensure reliable payment delivery, ultimately enhancing the efficiency of global financial transactions.
 
@@ -75,27 +75,24 @@ The code is designed to:
 ### Proprietary Software:
 - None explicitly used in this project. The solution is built entirely on open-source tools.
 
-## 8. Any Other Information That Might Be Useful for the Judges
+## 8. Additional Information
 
 - **Innovation**: This project uniquely combines AI and quantum computing, showcasing a forward-thinking approach to financial optimization. While it uses a quantum simulator (AerSimulator) due to hardware limitations, it’s designed to scale with real quantum hardware in the future.
 - **Extensibility**: The graph-based network can be expanded with more nodes and edges, and the AI model can be retrained with real-world data for production use.
 - **Realism**: Incorporates practical constraints like node downtime (e.g., bank D offline) and liquidity checks, reflecting real-world banking scenarios.
-- **User Experience**: The front-end features FIS branding, quantum-inspired animations, and a clean, responsive design to enhance usability and visual appeal.
 - **Limitations**: 
   - Currently uses synthetic data for AI training; real transaction data would improve accuracy.
   - Quantum optimization is simulated, not run on actual quantum hardware.
   - Assumes a small, static network for demonstration; scaling to larger networks may require optimization.
 - **Setup Instructions**: 
   1. Install dependencies: `pip install networkx numpy tensorflow qiskit qiskit-aer qiskit-optimization flask`.
-  2. Run the Flask app: `python app.py` (assuming the main file is named `app.py`).
+  2. Run the Flask app: `python payment_router.py`.
   3. Access the web interface at `http://localhost:5000`.
 - **Future Enhancements**: 
   - Integrate real-time banking APIs for dynamic network data.
   - Deploy on a cloud platform with a real quantum backend (e.g., IBM Quantum).
   - Add multi-currency support and advanced forex rate modeling.
 
-This solution demonstrates technical prowess, creativity, and practical applicability, making it a strong contender for the FIS Hackathon.
-
 ---
 
-© 2025 FIS Global. Submitted by [Your Name/Team Name] for the FIS Hackathon.
+© 2025 FIS Global. Submitted by [DevSquad] for INNOVATE48.
