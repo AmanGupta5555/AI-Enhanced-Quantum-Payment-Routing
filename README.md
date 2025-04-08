@@ -102,7 +102,7 @@ The code is designed to:
   - Add multi-currency support and advanced forex rate modeling.
 - **Demo Output**:  
   - **Input Form**:  
-    ![Input Form](https://drive.google.com/file/d/1IpyuaOwjncsGuKfS9qJZfEiWtsb65mxu/view)  
+    ![Input Form](https://drive.google.com/file/d/1IpyuaOwjncsGuKfS9qJZfEiWtsb65mxu/view?usp=drive_link)  
   - **Result Page**:  
     ![Result Page](https://via.placeholder.com/600x400.png?text=Result+Page+Image)   
 ---
