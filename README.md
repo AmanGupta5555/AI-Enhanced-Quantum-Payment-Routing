@@ -104,7 +104,7 @@ The code is designed to:
   - **Input Form**:  
     ![Input Form](https://drive.google.com/file/d/1IpyuaOwjncsGuKfS9qJZfEiWtsb65mxu/view?usp=drive_link)  
   - **Result Page**:  
-    ![Result Page](https://via.placeholder.com/600x400.png?text=Result+Page+Image)   
+    ![Result Page](https://drive.google.com/uc?export=download&id=1IpyuaOwjncsGuKfS9qJZfEiWtsb65mxu)   
 ---
 
 © 2025 FIS Global. Submitted by [DevSquad] for INNOVATE48.
