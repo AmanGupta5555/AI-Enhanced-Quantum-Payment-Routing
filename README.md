@@ -85,9 +85,17 @@ The code is designed to:
   - Quantum optimization is simulated, not run on actual quantum hardware.
   - Assumes a small, static network for demonstration; scaling to larger networks may require optimization.
 - **Setup Instructions**: 
-  1. Install dependencies: `pip install networkx numpy tensorflow qiskit qiskit-aer qiskit-optimization flask`.
-  2. Run the Flask app: `python payment_router.py`.
-  3. Access the web interface at `http://localhost:5000`.
+  1. Install dependencies:
+-`pip install networkx` numpy tensorflow    flask`.
+-`pip install numpy`
+-`pip install flask`
+-`pip install qiskit==1.2.0`
+-`pip install qiskit-aer==0.17.0`
+-`pip install qiskit-optimization==0.6.1`
+-`pip install qiskit-algorithms==0.3.1`
+-`pip install tensorflow`
+  3. Run the Flask app: `python payment_router.py`.
+  4. Access the web interface at `http://localhost:5000`.
 - **Future Enhancements**: 
   - Integrate real-time banking APIs for dynamic network data.
   - Deploy on a cloud platform with a real quantum backend (e.g., IBM Quantum).
