@@ -75,7 +75,7 @@ The code is designed to:
 ### Proprietary Software:
 - None explicitly used in this project. The solution is built entirely on open-source tools.
 
-## :info: 8. Additional Information
+## :star: 8. Additional Information
 
 - **Innovation**: This project uniquely combines AI and quantum computing, showcasing a forward-thinking approach to financial optimization. While it uses a quantum simulator (AerSimulator) due to hardware limitations, it’s designed to scale with real quantum hardware in the future.
 - **Extensibility**: The graph-based network can be expanded with more nodes and edges, and the AI model can be retrained with real-world data for production use.
@@ -102,11 +102,9 @@ The code is designed to:
   - Add multi-currency support and advanced forex rate modeling.
 - **Demo Output**:  
   - **Input Form**:  
-    ![Input Form](https://via.placeholder.com/600x400.png?text=Input+Form+Image)  
-    *"C:\Users\91910\Pictures\Screenshots\Screenshot 2025-04-09 000752.png"*  
+    ![Input Form](https://drive.google.com/file/d/1IpyuaOwjncsGuKfS9qJZfEiWtsb65mxu/view)  
   - **Result Page**:  
-    ![Result Page](https://via.placeholder.com/600x400.png?text=Result+Page+Image)  
-    *"C:\Users\91910\Pictures\Screenshots\Screenshot 2025-04-09 000816.png"*  
+    ![Result Page](https://via.placeholder.com/600x400.png?text=Result+Page+Image)   
 ---
 
 © 2025 FIS Global. Submitted by [DevSquad] for INNOVATE48.
