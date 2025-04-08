@@ -1,16 +1,16 @@
 # README.md
 
-## 1. Solution Name
+## :rocket: 1. Solution Name
 
 **AI Enhanced Quantum Payment Router**
 
-## 2. Solution Description
+## :mag: 2. Solution Description
 
 The **AI Enhanced Quantum Payment Router** is an innovative solution designed to optimize cross-border payment routing in financial networks. Cross-border payments often face challenges such as high transaction fees, variable forex rates, network latency, and liquidity constraints, leading to inefficiencies and increased costs for financial institutions and their clients. Traditional routing methods may not dynamically account for real-time network conditions or optimize across multiple factors simultaneously.
 
 Our solution addresses these issues by leveraging **artificial intelligence (AI)** and **quantum computing principles** to identify the most cost-effective and efficient payment paths between banks. It considers factors like latency, fees, liquidity, and forex rates, while also adapting to real-time network conditions (e.g., offline nodes or insufficient liquidity). The goal is to minimize transaction costs, reduce delays, and ensure reliable payment delivery, ultimately enhancing the efficiency of global financial transactions.
 
-## 3. Solution Features
+## :star: 3. Solution Features
 
 - **AI-Powered Path Prediction**: Uses a deep neural network to predict optimal payment paths based on features like latency, fees, liquidity, and forex costs.
 - **Quantum Optimization**: Employs quantum-inspired algorithms (QAOA) to refine path selection, balancing multiple weighted factors for a globally optimal solution.
@@ -21,7 +21,7 @@ Our solution addresses these issues by leveraging **artificial intelligence (AI)
 - **Error Handling**: Provides detailed feedback on issues like offline nodes, insufficient liquidity, or invalid inputs.
 - **Scalability**: Designed to handle a network of banks (e.g., A, B, C, D, E) with extensible graph-based architecture.
 
-## 4. Technologies and Architecture Used
+## :gear: 4. Technologies and Architecture Used
 
 ### Technologies:
 - **Python**: Core programming language for backend logic, AI modeling, and quantum optimization.
@@ -43,7 +43,7 @@ Our solution addresses these issues by leveraging **artificial intelligence (AI)
   - `/network_status` (GET): Provides JSON data on network status for potential extensions.
 - **Modular Design**: Separates AI training, path feature extraction, quantum optimization, and web logic into distinct components for maintainability.
 
-## 5. What Your Code Is Designed For
+## :dart: 5. Design Purpose
 
 The code is designed to:
 - Simulate a payment network with banks (A, B, C, D, E) and predefined connections.
@@ -53,7 +53,7 @@ The code is designed to:
 - Handle real-world constraints like offline nodes (e.g., bank D is down) and insufficient liquidity, offering alternative paths when needed.
 - Serve as a proof-of-concept for integrating AI and quantum computing in financial routing systems.
 
-## 6. What Your Code Was Written In
+## :computer: 6. Languages Used
 
 - **Python 3.x**: Backend logic, AI model, quantum optimization, and Flask app.
 - **HTML**: Templates (`index.html` for input, `result.html` for output).
@@ -61,7 +61,7 @@ The code is designed to:
 - **JavaScript**: Client-side validation (e.g., preventing same start/end nodes) and DOM manipulation.
 - **Jinja2**: Templating engine for Flask to dynamically render HTML pages.
 
-## 7. Open Source or Proprietary Software Used
+## :package: 7. Open Source or Proprietary Software Used
 
 ### Open Source Software:
 - **TensorFlow**: Open-source machine learning framework (Apache 2.0 License).
@@ -75,7 +75,7 @@ The code is designed to:
 ### Proprietary Software:
 - None explicitly used in this project. The solution is built entirely on open-source tools.
 
-## 8. Additional Information
+## :info: 8. Additional Information
 
 - **Innovation**: This project uniquely combines AI and quantum computing, showcasing a forward-thinking approach to financial optimization. While it uses a quantum simulator (AerSimulator) due to hardware limitations, it’s designed to scale with real quantum hardware in the future.
 - **Extensibility**: The graph-based network can be expanded with more nodes and edges, and the AI model can be retrained with real-world data for production use.
@@ -100,7 +100,13 @@ The code is designed to:
   - Integrate real-time banking APIs for dynamic network data.
   - Deploy on a cloud platform with a real quantum backend (e.g., IBM Quantum).
   - Add multi-currency support and advanced forex rate modeling.
-
+- **Demo Output**:  
+  - **Input Form**:  
+    ![Input Form](https://via.placeholder.com/600x400.png?text=Input+Form+Image)  
+    *"C:\Users\91910\Pictures\Screenshots\Screenshot 2025-04-09 000752.png"*  
+  - **Result Page**:  
+    ![Result Page](https://via.placeholder.com/600x400.png?text=Result+Page+Image)  
+    *"C:\Users\91910\Pictures\Screenshots\Screenshot 2025-04-09 000816.png"*  
 ---
 
 © 2025 FIS Global. Submitted by [DevSquad] for INNOVATE48.
